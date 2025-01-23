@@ -12,7 +12,7 @@ class MentorController extends Controller
      */
     public function index()
     {
-        //
+        return view('mentor');
     }
 
     /**

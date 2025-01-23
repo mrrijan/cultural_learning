@@ -22,7 +22,8 @@ class LanguageTableSeeder extends Seeder
         foreach ($data as $d) {
             $language = new Language();
             $language->title = $d[0];
-            $language->description = $data[1];
+            $language->description = $d[1];
+            $language->save();
         }
     }
 }
