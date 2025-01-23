@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -15,6 +16,31 @@ class CourseController extends Controller
         //
     }
 
+    public function showOngoingCourses($mentor_id)
+    {
+        $courses = Course::where("mentor_id", $mentor_id)
+            ->where("accepted_at",null)
+            ->get();
+        return view("course.requestedCourses", compact("courses"));
+    }
+
+    public function showAcceptedCourses($mentor_id)
+    {
+        $courses = Course::where("mentor_id", $mentor_id)
+            ->whereNotNull("accepted_at")
+            ->get();
+        return view("course.acceptedCourses", compact("courses"));
+    }
+    public function acceptCourse($course_id)
+    {
+        $now = Carbon::now();
+
+        $course = Course::where("id", $course_id)->first();
+        $course->accepted_at = $now;
+        $course->save();
+
+        return redirect("/mentor");
+    }
     /**
      * Show the form for creating a new resource.
      */

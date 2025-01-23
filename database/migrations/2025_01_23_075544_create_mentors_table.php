@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('mentors', function (Blueprint $table) {
             $table->id();
             $table->string('type');
+            $table->foreignId('user_id')->nullable();
             $table->foreignId("language_id");
             $table->string("address");
             $table->string("email");
+            $table->string("phone")->nullable();
             $table->boolean("verified")->default(false);
             $table->boolean("active")->default(false);
             $table->timestamps();

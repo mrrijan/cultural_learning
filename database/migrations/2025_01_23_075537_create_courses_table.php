@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId("language_id");
             $table->foreignId("mentor_id");
-            $table->date("date");
-            $table->string("type");
+            $table->foreignId("student_id");
+            $table->date("accepted_at")->nullable();
+            $table->date("completed_at")->nullable();
+//            $table->string("type");
             $table->timestamps();
         });
     }
