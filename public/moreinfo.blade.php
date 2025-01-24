@@ -109,17 +109,13 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav menu-navbar-nav ms-3">
-                        <li class="nav-item"><a class="nav-link active" href="index.html#home"
+                        <li class="nav-item"><a class="nav-link active" href="{{route("home")}}"
                                 aria-current="page">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#explore">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#learn">Learn</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#support">Support</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php#explore">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php#learn">Learn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php#support">Support</a></li>
                     </ul>
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-primary me-2">Sign up</button>
-                        <button class="btn btn-outline-primary">Login</button>
-                    </div>
                 </div>
             </div>
         </nav>

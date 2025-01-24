@@ -470,7 +470,7 @@
             <tbody>
             @foreach($mentors as $mentor)
                 @php
-                    $course = \App\Models\Course::where("user_id",$user->id)
+                    $course = \App\Models\Course::where("user_id",$user?->id)
                                             ->where("mentor_id",$mentor->id)->first();
                 @endphp
                 <tr>

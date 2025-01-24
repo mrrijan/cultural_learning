@@ -1,8 +1,8 @@
 <aside id="main-sidebar" class="main-sidebar main-sidebar-custom sidebar-light-olive elevation-4">
     <!-- Brand Logo -->
     <a href="{{url('/dashboard/mentor')}}" class="brand-link">
-        <img src="{{url('/theme/dist/img/AdminLTELogo.png')}}" alt="AMS Logo"
-             class="brand-image img-circle elevation-3" style="opacity: .8">
+{{--        <img src="{{url('/theme/dist/img/AdminLTELogo.png')}}" alt="AMS Logo"--}}
+{{--             class="brand-image img-circle elevation-3" style="opacity: .8">--}}
         <span class="brand-text font-weight-light">HeriTech</span>
     </a>
     @php

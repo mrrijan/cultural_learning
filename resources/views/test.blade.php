@@ -520,11 +520,11 @@
                 <div class="card culture-card rounded-2 border-2 py-3 px-3">
                     <img src="./images/Newa_culture/newari_Culture.jpg" alt="Newari Culture" class="img-fluid culture-img" />
                     <div class="card-body">
-                        <h4 class="text-uppercase mt-4 mb-3 text-center">Newari Culture</h4>
+                        <h4 class="text-uppercase mt-4 mb-3 text-center">Newa Culture</h4>
                         <p class="mb-4 text-start">The Newar community, the original inhabitants of the Kathmandu Valley, are celebrated for their intricate arts,
                             vibrant festivals, and exquisite cuisine. Explore their timeless traditions and craftsmanship.</p>
                         <div class="d-flex">
-                            <a href="moreinfo.html" id="moreinfo"><button class="btn btn-info mx-1"><i class="bi bi-eye"></i> more Info</button></a>
+                            <a href="moreinfo.blade.php" id="moreinfo"><button class="btn btn-info mx-1"><i class="bi bi-eye"></i> more Info</button></a>
 
                         </div>
 
