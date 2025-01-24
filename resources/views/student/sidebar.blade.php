@@ -1,6 +1,6 @@
 <aside id="main-sidebar" class="main-sidebar main-sidebar-custom sidebar-light-olive elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url('/dashboard/mentor')}}" class="brand-link">
+    <a href="{{url('/dashboard/student')}}" class="brand-link">
         <img src="{{url('/theme/dist/img/AdminLTELogo.png')}}" alt="AMS Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">HeriTech</span>
@@ -8,7 +8,7 @@
     @php
         $user = \Illuminate\Support\Facades\Auth::user();
     @endphp
-    <!-- Sidebar -->
+        <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -23,47 +23,24 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-header">--{{__("Customers")}}--</li>
-                @php
-                    $mentor = \App\Models\Mentor::where("user_id", $user->id)->first();
-                @endphp
-                @if(!$mentor)
+                @if($user)
                     <li class="nav-item">
-                        <a  href="{{url("/dashboard/mentor/add")}}" class="nav-link">
+                        <a  href="{{url("/dashboard/requested-courses/$user->id")}}" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                {{__("Add Info")}}
+                                {{__("Pending Courses")}}
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="{{url("/dashboard/accepted-courses-student/$user->id")}}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                {{__("Completed courses")}}
                             </p>
                         </a>
                     </li>
                 @endif
-                @if($mentor)
-                    <li class="nav-item">
-                        <a  href="{{url("/dashboard/mentor/edit/$mentor->id")}}" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                {{__("Edit Info")}}
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="{{url("/dashboard/ongoing-courses/$mentor->id")}}" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                {{__("Course Requests")}}
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="{{url("/dashboard/accepted-courses/$mentor->id")}}" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                {{__("Accepted courses")}}
-                            </p>
-                        </a>
-                    </li>
-                @endif
-
             </ul>
         </nav>
     </div>

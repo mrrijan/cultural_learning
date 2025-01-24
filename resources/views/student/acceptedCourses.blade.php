@@ -1,10 +1,10 @@
-@extends("mentor.app")
+@extends("student.app")
 @section('page-title')
     {{__('Courses')}}
 @endsection
 @section('breadcrumbs')
     <li class="breadcrumb-item active"><a href="{{url('/')}}">{{__('Dashboard')}}</a></li>
-    <li class="breadcrumb-item active"><a href="{{url('/dashboard/mentor')}}">{{__('Mentor')}}</a></li>
+    <li class="breadcrumb-item active"><a href="{{url('/dashboard/student')}}">{{__('Student')}}</a></li>
     <li class="breadcrumb-item active">{{__('Courses')}}</li>
 @endsection
 @section("body")

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -16,6 +17,20 @@ class CourseController extends Controller
         //
     }
 
+    public function bookMentor($language_id, $mentor_id)
+    {
+        $now = Carbon::now();
+        $user = Auth::user();
+
+        Course::create([
+            "language_id" => $language_id,
+            "mentor_id" => $mentor_id,
+            "user_id" => $user->id,
+            "booked_date" => $now
+        ]);
+
+        return redirect()->back()->with('success', 'Booked Successfully');
+    }
     public function showOngoingCourses($mentor_id)
     {
         $courses = Course::where("mentor_id", $mentor_id)

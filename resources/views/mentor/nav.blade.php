@@ -24,9 +24,6 @@
             </a>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
 
-                <a href="{{url('/my-profile')}}" class="dropdown-item">
-                    <i class="fas fa-user mr-2"></i> Profile
-                </a>
                 <a href="{{url('/logout')}}" class="dropdown-item" onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
                     <i class="fas fa-lock mr-2"></i> Logout

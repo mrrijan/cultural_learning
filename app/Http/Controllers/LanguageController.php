@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
+use App\Models\Mentor;
 use Illuminate\Http\Request;
 
 class LanguageController extends Controller
@@ -15,6 +16,32 @@ class LanguageController extends Controller
         //
     }
 
+    public function beginnerMentors($language_id)
+    {
+        $mentors = Mentor::where("language_id", $language_id)
+            ->where("type", "beginner")
+            ->where("verified", 1)
+            -> get();
+        return view("language.beginnerMentors", compact("mentors", "language_id"));
+    }
+
+    public function intermediateMentors($language_id)
+    {
+        $mentors = Mentor::where("language_id", $language_id)
+            ->where("type", "intermediate")
+            ->where("verified", 1)
+            -> get();
+        return view("language.beginnerMentors", compact("mentors", "language_id"));
+    }
+
+    public function expertMentors($language_id)
+    {
+        $mentors = Mentor::where("language_id", $language_id)
+            ->where("type", "expert")
+            ->where("verified", 1)
+            -> get();
+        return view("language.beginnerMentors", compact("mentors", "language_id"));
+    }
     /**
      * Show the form for creating a new resource.
      */

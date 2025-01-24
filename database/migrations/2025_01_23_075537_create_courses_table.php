@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId("language_id");
             $table->foreignId("mentor_id");
-            $table->foreignId("student_id");
+            $table->foreignId("user_id");
+            $table->date("booked_date")->nullable();
             $table->date("accepted_at")->nullable();
             $table->date("completed_at")->nullable();
 //            $table->string("type");

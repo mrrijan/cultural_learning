@@ -1,10 +1,10 @@
-@extends("mentor.app")
+@extends("student.student")
 @section('page-title')
     {{__('Courses')}}
 @endsection
 @section('breadcrumbs')
     <li class="breadcrumb-item active"><a href="{{url('/')}}">{{__('Dashboard')}}</a></li>
-    <li class="breadcrumb-item active"><a href="{{url('/dashboard/mentor')}}">{{__('Mentor')}}</a></li>
+    <li class="breadcrumb-item active"><a href="{{url('/dashboard/student')}}">{{__('Student')}}</a></li>
     <li class="breadcrumb-item active">{{__('Courses')}}</li>
 @endsection
 @section("body")
@@ -17,7 +17,7 @@
                         <th>{{__('Student Name')}}</th>
                         <th>{{__('Student Email')}}</th>
                         <th>{{__("Language")}}</th>
-                        <th>{{__("Accepted at")}}</th>
+                        <th>{{__("Type")}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -26,7 +26,7 @@
                             <td>{{$course->user->name}}</td>
                             <td>{{$course->user->email}}</td>
                             <td>{{$course->language->title}}</td>
-                            <td>{{$course->accepted_at}}</td>
+                            <td>{{$course->mentor->type}}</td>
                         </tr>
                     @endforeach
                     </tbody>

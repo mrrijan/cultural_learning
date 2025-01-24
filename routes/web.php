@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,4 +47,19 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get("/dashboard/mentors/verified", [AdminController::class, 'showVerifiedMentors'])->name('mentor.verified');
     Route::get("/dashboard/mentor/un-verify/{mentor_id}", [AdminController::class, 'unVerifyMentor'])->name('mentor.unVerify');
 });
+
+//for booking course
+Route::middleware(['auth', 'role:student'])->group(function () {
+    Route::get("/course/{language_id}/book/{mentor_id}",[CourseController::class, 'bookMentor'])->name('mentor.bookMentor');
+
+    //for dashboard
+    Route::get("/dashboard/student",[StudentController::class, 'index'])->name('student.dashboard');
+    Route::get("/dashboard/requested-courses/{user_id}",[StudentController::class, 'showOngoingCourses'])->name('student.showOngoingCourses');
+    Route::get("/dashboard/accepted-courses-student/{user_id}",[StudentController::class, 'showAcceptedCourses'])->name('student.showAcceptedCourses');
+});
+//for showing mentors according to language
+Route::get("/{language_id}/beginner/mentors",[LanguageController::class, 'beginnerMentors'])->name('mentor.beginnerMentors');
+Route::get("/{language_id}/intermediate/mentors",[LanguageController::class, 'intermediateMentors'])->name('mentor.beginnerMentors');
+Route::get("/{language_id}/expert/mentors",[LanguageController::class, 'expertMentors'])->name('mentor.beginnerMentors');
+
 require __DIR__ . '/auth.php';

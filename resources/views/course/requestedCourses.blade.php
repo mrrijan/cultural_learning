@@ -23,8 +23,8 @@
                     <tbody>
                     @foreach($courses as $course)
                         <tr>
-                            <td>{{$course->student->name}}</td>
-                            <td>{{$course->student->email}}</td>
+                            <td>{{$course->user->name}}</td>
+                            <td>{{$course->user->email}}</td>
                             <td>{{$course->language->title}}</td>
                             <td>
                                 <button class="btn" data-toggle="tooltip" data-placement="bottom"
