@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
 //        ]);
         $this->call(LanguageTableSeeder::class);
         $this->call(MentorTableSeeder::class);
+        $this->call(AdminTableSeeder::class);
     }
 }

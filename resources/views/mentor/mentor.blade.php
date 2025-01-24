@@ -23,12 +23,14 @@
                             <th>{{__("Address")}}</th>
                             <th>{{__("Email")}}</th>
                             <th>{{__("Phone")}}</th>
+                            <th>{{__("Verification")}}</th>
                         </tr>
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>{{$mentor->address}}</td>
                             <td>{{$mentor->email}}</td>
                             <td>{{$mentor->phone}}</td>
+                            <td>{{$mentor->verified === 0 ? "unverified" : "verified"}}</td>
                         </tr>
                         </thead>
 

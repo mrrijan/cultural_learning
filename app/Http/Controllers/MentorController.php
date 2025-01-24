@@ -39,6 +39,7 @@ class MentorController extends Controller
         $user = Auth::user();
 
         $mentor = new Mentor();
+        $mentor->name = $user->name;
         $mentor->user_id = $user->id;
         $mentor->type = $request->type;
         $mentor->language_id = $request->language;
@@ -47,7 +48,7 @@ class MentorController extends Controller
         $mentor->phone = $request->phone;
         $mentor->save();
 
-        return redirect("/mentor");
+        return redirect("/dashboard/mentor");
     }
 
 
@@ -82,7 +83,7 @@ class MentorController extends Controller
         $mentor->phone = $request->phone;
         $mentor->save();
 
-        return redirect("/mentor");
+        return redirect("/dashboard/mentor");
     }
 
     /**

@@ -39,7 +39,7 @@ class CourseController extends Controller
         $course->accepted_at = $now;
         $course->save();
 
-        return redirect("/mentor");
+        return redirect("/dashboard/mentor");
     }
     /**
      * Show the form for creating a new resource.

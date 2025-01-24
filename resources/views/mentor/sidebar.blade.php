@@ -37,30 +37,33 @@
                         </a>
                     </li>
                 @endif
-                <li class="nav-item">
-                    <a  href="{{url("/dashboard/mentor/edit/$mentor->id")}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            {{__("Edit Info")}}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a  href="{{url("/dashboard/ongoing-courses/$mentor->id")}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            {{__("Course Requests")}}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a  href="{{url("/dashboard/accepted-courses/$mentor->id")}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            {{__("Accepted courses")}}
-                        </p>
-                    </a>
-                </li>
+                @if($mentor)
+                    <li class="nav-item">
+                        <a  href="{{url("/dashboard/mentor/edit/$mentor->id")}}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                {{__("Edit Info")}}
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="{{url("/dashboard/ongoing-courses/$mentor->id")}}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                {{__("Course Requests")}}
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="{{url("/dashboard/accepted-courses/$mentor->id")}}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                {{__("Accepted courses")}}
+                            </p>
+                        </a>
+                    </li>
+                @endif
+
             </ul>
         </nav>
     </div>
